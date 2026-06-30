@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:practice.expandtesting.com)",
+      "WebFetch(domain:www.crossfit.com)"
+    ]
+  }
+}
