@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Playwright artifacts
+playwright-report/
+test-results/
+blob-report/
+playwright/.cache/
+
+# Coverage
+/coverage
+
+# Tooling caches
+.eslintcache
+
+# Logs
+*.log
+
+# OS / editor
+.DS_Store
+
+# Local env (never commit real secrets). Note: pnpm-lock.yaml is intentionally
+# NOT ignored — it must be committed for reproducible installs.
+.env

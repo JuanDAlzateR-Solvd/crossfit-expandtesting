@@ -1,0 +1,13 @@
+Workout Log — sample upload fixture
+====================================
+
+Date: 2026-06-30
+WOD: "Fran"
+- 21-15-9 reps for time
+- Thrusters (95 lb)
+- Pull-ups
+
+Result: 3:42
+Notes: Used a single kettlebell scaling for the last round.
+
+(This is a small text fixture used by the file-upload test.)
