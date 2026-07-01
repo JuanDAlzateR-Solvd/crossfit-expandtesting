@@ -25,3 +25,8 @@ playwright/.cache/
 # Local env (never commit real secrets). Note: pnpm-lock.yaml is intentionally
 # NOT ignored — it must be committed for reproducible installs.
 .env
+
+INTERVIEW*.md
+interview*
+audit.md
+SESSION*.md

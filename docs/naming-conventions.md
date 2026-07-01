@@ -65,7 +65,7 @@ analogy — kept plain on purpose).
 | File Upload              | `/upload`                   | `UploadPage` / `uploadPage`                   | Coach Certification Upload           |   ✅    |
 | Sortable Data Tables     | `/tables`                   | `DataTablesPage` / `dataTablesPage`           | Box Leaderboard (sortable)           |   ✅    |
 | Dynamic Pagination Table | `/dynamic-pagination-table` | `PaginationTablePage` / `paginationTablePage` | Athlete Roster (paginated)           |   ✅    |
-| Dynamic Table            | `/dynamic-table`            | _(future page object)_                        | Live WOD Metrics board               |   ✅    |
+| Dynamic Table            | `/dynamic-table`            | `DynamicTablePage` / `dynamicTablePage`       | Live WOD Metrics board               |   ✅    |
 | Drag and Drop            | `/drag-and-drop`            | _(future page object)_                        | WOD Builder (reorder movements)      |   ✅    |
 | IFrame                   | `/iframe`                   | _(future page object)_                        | Workout Video / Coach Notes (iframe) |   ✅    |
 | Notification Message     | `/notification-message`     | _(future page object)_                        | Flash / Notification Message         |   ⚪    |

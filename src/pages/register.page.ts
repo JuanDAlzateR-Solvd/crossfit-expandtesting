@@ -1,4 +1,4 @@
-import { type Page, type Locator } from '@playwright/test';
+import { type Page, type Locator, expect } from '@playwright/test';
 import { BasePage } from './base.page';
 
 /** Page Object for `/register`. */
@@ -28,8 +28,15 @@ export class RegisterPage extends BasePage {
     await this.submitButton.click();
   }
 
-  /** Assert the resulting flash banner contains the given message. */
+  /** Assert a rejected registration: flash visible and page remains on /register. */
   async expectMessage(message: string | RegExp): Promise<void> {
+    await expect(this.page).toHaveURL(/\/register$/);
     await this.expectFlash(message);
+  }
+
+  /** Assert a successful registration: flash visible and redirected to /login. */
+  async expectRegistrationSucceeded(): Promise<void> {
+    await expect(this.page).toHaveURL(/\/login$/);
+    await this.expectFlash('Successfully registered, you can log in now.');
   }
 }

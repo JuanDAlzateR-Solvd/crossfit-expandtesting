@@ -16,6 +16,6 @@ test.describe('Live WOD Metrics (/dynamic-table) @tables', () => {
   test('the metrics table lists the Chrome process @regression', async ({ dynamicTablePage }) => {
     await dynamicTablePage.goto();
     await expect(dynamicTablePage.chromeCpuLabel).toBeVisible();
-    await expect(dynamicTablePage.table.getByText('Chrome', { exact: true })).toBeVisible();
+    await expect(dynamicTablePage.processLabel('Chrome')).toBeVisible();
   });
 });

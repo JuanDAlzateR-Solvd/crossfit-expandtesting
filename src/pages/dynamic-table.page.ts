@@ -29,7 +29,9 @@ export class DynamicTablePage extends BasePage {
   /** Read a cell by locating its column via header text and its row via label text. */
   async cell(rowLabel: string, columnHeader: string): Promise<string> {
     const headers = await this.table.getByRole('columnheader').allInnerTexts();
-    const columnIndex = headers.findIndex((h) => h.trim().toLowerCase() === columnHeader.toLowerCase());
+    const columnIndex = headers.findIndex(
+      (h) => h.trim().toLowerCase() === columnHeader.toLowerCase(),
+    );
     const row = this.table.getByRole('row').filter({ hasText: rowLabel });
     return (await row.getByRole('cell').nth(columnIndex).innerText()).trim();
   }
@@ -39,10 +41,14 @@ export class DynamicTablePage extends BasePage {
     return this.cell('Chrome', 'CPU');
   }
 
+  /** A locator that matches a process name cell in the table body. */
+  processLabel(name: string): Locator {
+    return this.table.getByText(name, { exact: true });
+  }
+
   /** Assert the highlighted label matches the value in the table cell. */
   async expectChromeCpuMatches(): Promise<void> {
     const displayed = await this.displayedChromeCpu();
-    const fromTable = await this.chromeCpuFromTable();
-    expect(fromTable).toBe(displayed);
+    await expect.poll(() => this.chromeCpuFromTable()).toBe(displayed);
   }
 }

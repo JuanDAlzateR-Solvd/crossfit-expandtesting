@@ -29,11 +29,6 @@ export abstract class BasePage {
     await this.page.goto(this.path, { waitUntil: 'domcontentloaded' });
   }
 
-  /** Wait until the DOM is parsed and ready for interaction. */
-  async waitUntilLoaded(): Promise<void> {
-    await this.page.waitForLoadState('domcontentloaded');
-  }
-
   /** The current browser URL. */
   url(): string {
     return this.page.url();

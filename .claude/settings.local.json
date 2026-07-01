@@ -2,7 +2,10 @@
   "permissions": {
     "allow": [
       "WebFetch(domain:practice.expandtesting.com)",
-      "WebFetch(domain:www.crossfit.com)"
+      "WebFetch(domain:www.crossfit.com)",
+      "Bash(pnpm lint *)",
+      "Bash(pnpm typecheck *)",
+      "Bash(pnpm test *)"
     ]
   }
 }

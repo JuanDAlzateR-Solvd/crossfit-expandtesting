@@ -1,4 +1,4 @@
-import { test, expect } from '../src/fixtures/test';
+import { test } from '../src/fixtures/test';
 
 /**
  * Athlete Sign-Up — registration against /register (server-validated).
@@ -10,14 +10,11 @@ import { test, expect } from '../src/fixtures/test';
 test.describe('Athlete Sign-Up (/register) @auth', () => {
   test('a new athlete registers successfully and is sent to log in @smoke', async ({
     registerPage,
-    page,
   }) => {
     const username = `athlete-${Date.now()}`;
     await registerPage.goto();
     await registerPage.register(username, 'Burpees123!');
-
-    await registerPage.expectMessage('Successfully registered, you can log in now.');
-    await expect(page).toHaveURL(/\/login/);
+    await registerPage.expectRegistrationSucceeded();
   });
 
   test('registration is rejected when the passwords do not match @negative', async ({

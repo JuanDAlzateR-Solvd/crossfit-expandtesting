@@ -24,10 +24,7 @@
       "files": ["tests/**/*.ts"],
       "extends": ["plugin:playwright/recommended"],
       "rules": {
-        "playwright/expect-expect": [
-          "error",
-          { "assertFunctionNames": ["expect", "expect*", "*.expect*"] }
-        ]
+        "playwright/expect-expect": ["error", { "assertFunctionPatterns": ["^expect"] }]
       }
     }
   ]

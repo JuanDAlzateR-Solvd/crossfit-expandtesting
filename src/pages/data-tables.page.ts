@@ -30,12 +30,12 @@ export class DataTablesPage extends BasePage {
 
   /** All trimmed cell texts for a given (0-based) column index, top to bottom. */
   async columnValues(columnIndex: number): Promise<string[]> {
-    const rowCount = await this.rows.count();
-    const values: string[] = [];
-    for (let i = 0; i < rowCount; i++) {
-      const cell = this.rows.nth(i).locator('td').nth(columnIndex);
-      values.push((await cell.innerText()).trim());
-    }
-    return values;
+    const texts = await this.rows.locator(`td:nth-child(${columnIndex + 1})`).allInnerTexts();
+    return texts.map((t) => t.trim());
+  }
+
+  /** A locator for the first body row whose text contains the given string. */
+  rowContaining(text: string | RegExp): Locator {
+    return this.rows.filter({ hasText: text });
   }
 }

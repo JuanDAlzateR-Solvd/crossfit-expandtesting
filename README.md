@@ -111,14 +111,14 @@ naming analogy only — it does **not** mean crossfit.com is exercised.
 | Athlete Login               | Login                    | `/login`                    | Auth is the gateway to every member feature; positive + negative paths. |
 | Athlete Onboarding          | Register                 | `/register`                 | New-account creation; positive/negative registration.                   |
 | Athlete Account Recovery    | Forgot Password          | `/forgot-password`          | Recovery flow; email-field validation.                                  |
-| Drop-In Check-In (OTP)      | OTP Login                | `/otp-login`                | One-time-password / 2FA-style sign-in.                                  |
+| Drop-In Check-In (OTP)      | OTP Login                | `/otp-login`                | One-time-password / 2FA-style sign-in. _(not implemented)_              |
 | Box Drop-In Booking Form    | Form Validation          | `/form-validation`          | Field-level validation across text, number, date, dropdown.             |
 | Coach Certification Upload  | File Upload              | `/upload`                   | File handling: input + drag-drop, size limit, success state.            |
 | Box Leaderboard (sortable)  | Sortable Data Tables     | `/tables`                   | Sorting + row actions on tabular data.                                  |
 | Athlete Roster (paginated)  | Dynamic Pagination Table | `/dynamic-pagination-table` | Pagination, page-size, search/filter.                                   |
 | Live WOD Metrics board      | Dynamic Table            | `/dynamic-table`            | Resilient locators for randomized/async content.                        |
-| WOD Builder (reorder)       | Drag and Drop            | `/drag-and-drop`            | Drag-and-drop interactions.                                             |
-| Workout Video / Coach Notes | IFrame                   | `/iframe`                   | Embedded video + rich-text editor inside iframes.                       |
+| WOD Builder (reorder)       | Drag and Drop            | `/drag-and-drop`            | Drag-and-drop interactions. _(not implemented)_                         |
+| Workout Video / Coach Notes | IFrame                   | `/iframe`                   | Embedded video + rich-text editor inside iframes. _(not implemented)_   |
 
 The full 15-row research table (including the original crossfit.com analogues and the
 reasoning behind each) lives in

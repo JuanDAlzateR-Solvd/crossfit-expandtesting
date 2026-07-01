@@ -35,12 +35,13 @@ export class LoginPage extends BasePage {
 
   /** Assert a successful login (redirect to `/secure` + success banner). */
   async expectLoggedIn(): Promise<void> {
-    await expect(this.page).toHaveURL(/\/secure/);
+    await expect(this.page).toHaveURL(/\/secure$/);
     await this.expectFlash('You logged into a secure area!');
   }
 
-  /** Assert login failed with the given error message. */
+  /** Assert login failed with the given error message and the page stayed on /login. */
   async expectError(message: string | RegExp): Promise<void> {
+    await expect(this.page).toHaveURL(/\/login$/);
     await this.expectFlash(message);
   }
 }

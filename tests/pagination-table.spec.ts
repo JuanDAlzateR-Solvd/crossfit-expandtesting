@@ -25,6 +25,6 @@ test.describe('WOD Leaderboard — Athlete Roster (/dynamic-pagination-table) @t
     await paginationTablePage.goto();
     await paginationTablePage.search('Jane Smith');
     await expect(paginationTablePage.rows).toHaveCount(1);
-    await expect(paginationTablePage.table.getByText('Jane Smith')).toBeVisible();
+    await expect(paginationTablePage.rowContaining('Jane Smith')).toBeVisible();
   });
 });

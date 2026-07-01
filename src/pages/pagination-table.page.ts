@@ -47,4 +47,9 @@ export class PaginationTablePage extends BasePage {
   async visibleRowCount(): Promise<number> {
     return this.rows.count();
   }
+
+  /** A locator for the first body row whose text contains the given string. */
+  rowContaining(text: string | RegExp): Locator {
+    return this.rows.filter({ hasText: text });
+  }
 }

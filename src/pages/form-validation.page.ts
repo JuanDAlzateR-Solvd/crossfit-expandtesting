@@ -45,9 +45,11 @@ export class FormValidationPage extends BasePage {
     await this.submitButton.click();
   }
 
-  /** The inline validation feedback element carrying the given message. */
+  /** The inline validation feedback element carrying the given message.
+   * Scoped to Bootstrap's .invalid-feedback elements to avoid matching
+   * unrelated page text. */
   errorFor(message: string | RegExp): Locator {
-    return this.page.getByText(message);
+    return this.page.locator('.invalid-feedback').getByText(message);
   }
 
   /** Assert an invalid submit kept us on the form and surfaced the given error. */

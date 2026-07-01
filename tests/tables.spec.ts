@@ -9,7 +9,7 @@ test.describe('WOD Leaderboard — sortable (/tables) @tables', () => {
     await dataTablesPage.goto();
     await expect(dataTablesPage.rows).toHaveCount(4);
     await expect(dataTablesPage.columnHeader('Last Name')).toBeVisible();
-    await expect(dataTablesPage.table.getByText('jsmith@gmail.com')).toBeVisible();
+    await expect(dataTablesPage.rowContaining('jsmith@gmail.com')).toBeVisible();
   });
 
   test('sorting by Last Name orders the leaderboard ascending @regression', async ({
